@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Header</title>
+<style type="text/css">
+	body{
+	font-family: Montserrat;
+	font-size: 20px;
+	color: white;
+	margin: 0px;
+	overflow-x: hiden;
+	background-color: #252b30;
+}
+	/* 	NAVIGACIJA  */
+.navigacija {
+	display: none;
+	flex-direction: row;
+	justify-content: flex-start;
+	height: 100px;
+	width: ;
+	padding: 10px 50px;
+	font-weight: 500;
+}
+.navigacija a{
+	color: white;
+	text-decoration: none;
+}
+.navigacija a:hover{
+	color: #29a4f9;
+}
+.nav-li a::after{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	margin-bottom: 0px;
+	left: 0;
+	bottom: 0;
+	background-color: #29a4f9;
+	transform: scaleX(0);
+	transform-origin: bottom right;
+	transition: transform 0.3s ease;
+}
+.nav-li a:hover::after{
+	transform: scaleX(1);
+	transform-origin: bottom left;
+}
+.navigacija li {
+	list-style: none;
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	margin: 0px 10px;
+}
+.navigacija li:hover{
+	color: #29a4f9;
+}
+.dropdown-sadrzaj{
+	display: none;
+	z-index: 100;
+}
+
+.navigacija ul li:hover ul.dropdown-sadrzaj{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	position: absolute;
+	width: 120%;
+	background-color: rgba(0, 0, 0, 0.7);
+	border: 1px solid #29a4f9;
+	border-radius: 15px;
+	padding: 10px;
+	margin: 0px;
+	line-height: 1.5;
+}
+
+#hamburger{
+	margin: 10px 25px;
+	height: 45px;
+	width: 45px;
+}
+#iks{
+	width: 45px;
+	height: 45px;
+}
+
+/*  KRAJ NAVIGACIJE  */
+</style>
+</head>
+<body>
+<header>
+	<a href="index.html"><img id="logo" src="Media/logo u boji 128x128.png" width="90px" /></a>
+<div id="hamburger"><img src="Media/hamburger.svg"></div>
+	<nav class="navigacija" id="navigacija">
+			<ul><div id="iks"><img src="Media/iks.svg"></div>
+				<li class="nav-li"><a href="index.html">Home</a></li>
+				<li class="nav-li"><a href="link">My work</a></li>
+				<li class="nav-li"><a onclick="downscroll('futer')">Contact</a></li>
+				<li class="nav-li" id="dropdown" onclick="spustiMeni()">Language
+  			    	<ul class="dropdown-sadrzaj" id="jezikOpcije">
+           				<li><a href="index.html" class="nav-li"><img src="Media/English.png" class="ikona5">English</a></li>
+            			<li class="nav-li"><a href="index-sr.html"><img src="Media/srbija.png" class="ikona5">Serbian</a></li>
+        			</ul>
+    			</li>
+			</ul>
+	</nav>
+</header>
+
+
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function() {
+    if (window.matchMedia("(max-width: 1001px)").matches) {
+        var hamburger = document.getElementById('hamburger');
+        var navigacija = document.getElementById('navigacija');
+
+        hamburger.addEventListener('click', function() {
+            if (getComputedStyle(navigacija).display === 'flex') {
+                navigacija.style.display = 'none';
+            } else {
+                navigacija.style.display = 'flex';
+            }
+        });
+
+        console.log("Telefon");
+    } else {
+        console.log("PC");
+    }
+    console.log("Dokument je učitan!");
+});
+
+</script>
+</body>
+</html>

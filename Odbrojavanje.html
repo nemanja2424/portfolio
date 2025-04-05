@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Vezba 106-counter</title>
+	<style type="text/css">
+		#date{
+			font-size: 20px	;
+			display: flex;
+			width: 50%;
+			height: 30px;
+			border: 2px solid black;
+		}
+		body{
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 25px;
+			width: auto;
+			/*font-weight: 500;*/
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+		}
+		div{
+			margin: 8px;
+			display: flex;
+			width: 280px;
+			flex-direction: row;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+		input{
+			font-size: 25px;
+			height: 30px;
+			width: 200px;
+			margin: 5px;
+			padding: 3px 7px;
+			border: 2px solid rgb(221, 221, 221);
+			border-radius: 5px;
+		}
+		input:focus{
+			outline: none;
+			border: 2px solid #7c3aed;
+		}
+		button{
+			width: 200px;
+			height: 30px;
+			font-size: 15px;
+			font-weight: 600;
+			background-color: #7c3aed;
+			border-radius: 5px;
+			cursor: pointer;
+			padding: 5px;
+			margin-top: 15px;
+
+		}
+		button:hover{
+			background-color: #5218b6;
+		}
+		button:active{
+			outline: 2px solid #5218b6;
+			border: 2px solid #fff;
+		}
+		h1{
+			font-size: 40px;
+		}
+		section{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			width: 500px;
+		}
+
+		#date{
+			font-size: 20px	;
+			display: flex;
+			width: auto;
+			height: 30px;
+			border: 2px solid black;
+			background-color: rgb(221, 221, 221);
+			border-radius: 5px;
+			padding: 7px 7px 3px 7px;
+		}
+	</style>
+</head>
+<body>
+
+<p><strong>Potrebno je uneti:</strong> Godinu, mesec i dan u buducnosti, i nakon toga startovati odbrojavanje do tog datume.</p>
+<br/>
+<div>
+	<div>
+		<label>Unesite godinu:</label><br/>
+		<input type="text" id="year">
+	</div>
+	<div>
+		<label>Unesite mesec:</label><br/>
+		<input type="text" id="month">
+	</div>
+	<div>
+		<label>Unesite dan:</label><br/>
+		<input type="text" id="day">
+		<button type="button" id="start">Započni odbrojavanje</button>
+	</div>
+</div>
+
+<section>
+	<h1>Odbrojavanje:</h1>
+	<div id="date"></div>
+</section>
+
+
+
+<script><!--
+	var timer
+	document.querySelector("#start").addEventListener("click", () =>{
+		if (timer !== null) {
+			window.clearTimeout(timer);
+			timer = null;
+		}
+		var odabranaGodina = document.querySelector("#year").value;
+		var odabranMesec = document.querySelector("#month").value;
+		var odabranDan = document.querySelector("#day").value;
+		if (odabranaGodina == "" || odabranMesec == "" || odabranDan == ""){
+			alert("Popunite sva polja");
+			return;
+		}
+		if (odabranMesec > 12 || odabranDan > 31) {
+			alert("Uneli ste neispravan datum");
+			return;
+		}
+
+		var countdown = new Date(odabranaGodina, odabranMesec, odabranDan).getTime();
+		timer = setInterval(function (){
+			var sada = new Date().getTime()
+			var distanca = countdown - sada;
+			var dani = Math.floor(distanca / (1000 * 60 * 60 * 24));
+			var sati = Math.floor((distanca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minuti = Math.floor((distanca % (1000 * 60 * 60)) / (1000 * 60));
+			var sekunde = Math.floor((distanca % (1000 * 60)) / 1000);
+
+			document.querySelector("#date").innerHTML = dani + " (dana) " + sati +" (sati) " + minuti + " (minuta) " + sekunde + " (sekunde) ";
+
+			if (distanca < 0) {
+				clearInterval(timer);
+				document.querySelector("#date").innerHTML = "Odbrojavanje je zavrseno!"
+			}
+		})
+	});
+
+--></script>
+</body>
+</html>

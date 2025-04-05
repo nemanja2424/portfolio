@@ -1,0 +1,157 @@
+var skrolovanje = 100;
+var scrollButton = document.getElementById('scroll-to-top');
+
+window.onscroll = function() {
+    if (document.documentElement.scrollTop > skrolovanje) {
+        scrollButton.style.display = 'flex';
+    } else {
+        scrollButton.style.display = 'none';
+    }
+};
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    }) 
+    
+}
+
+
+
+
+
+
+
+	function konvertujTezinu(){
+		var tezinaDiv = document.getElementById('tezinaDiv')
+		if (tezina.unos.value==""){
+			tezinaDiv.innerHTML += '<p class="tekstGreske">Unesite vrednost!</p>';
+		}
+		else{
+			
+		}
+	}
+
+
+
+
+
+
+Moj prvi projekat u WordPress-u je bio upravo ovaj. Pošto sam krenuo sam da učim kako WordPress funkcioniše, verujem da nisam sve najbolje uradio kao i ostale projekte. 
+Ali sam veoma zadovoljan kako je moj prvi sajt na kraju ispao.
+
+Koristio sam besplatnu verziju teme Astra. Ona je imala neke svoje prednosti u odnosu na ostale besplatne teme koje sam nasao. Ali sve elemente koje tema nije nudila, a želeo sam ih na svom sajtu, nadomestio sam plugin-ovima. Jedan od primera je zapravo Sticky header ili Forminator.
+Na samom sajtu se mogu naći kontakt kao i kontakt forma preko Forminator plugin-a. Takođe je dodat prikaz lokacije na mapi kroz plugin, kao i Membership za VIP program. 
+
+
+/* 	NAVIGACIJA  */
+.navigacija{
+	z-index: 2;
+	position: relative;
+	text-align: right;
+	margin-right: 120px;
+}
+.navigacija li{
+	z-index: 2;
+	display: inline;
+	margin: 8px;
+	color: white;
+}
+.navigacija li:hover{
+	color: #29a4f9;
+}
+.navigacija ul{
+	z-index: 2;
+	list-style-type: none;
+}
+.navigacija a{
+	color: white;
+	text-decoration: none;
+}
+.navigacija a:hover{
+	color: #29a4f9;
+}
+.nav-li{
+	cursor: pointer;
+	z-index: 2;
+	color: white;
+	font-size: 18px;
+	text-decoration: none;
+	position: relative;
+	padding-bottom: 5px;
+}
+.nav-li a:hover{
+	color: #29a4f9;
+}
+.nav-li a::after{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	margin-bottom: 5px;
+	left: 0;
+	bottom: 0;
+	background-color: #29a4f9;
+	transform: scaleX(0);
+	transform-origin: bottom right;
+	transition: transform 0.3s ease;
+}
+.nav-li a:hover::after{
+	transform: scaleX(1);
+	transform-origin: bottom left;
+}
+
+/* Stil za opcije menija */
+.nav-li2 {
+    position: relative;
+    list-style: none;
+}
+.nav-li2 a{
+	line-height: 1;
+}
+
+/* Dodajte liniju ispod opcija */
+.nav-li2 a::after {
+    content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	margin-bottom: 0px;
+	left: 0;
+	bottom: 0;
+	background-color: #29a4f9;
+	transform: scaleX(0);
+	transform-origin: bottom right;
+	transition: transform 0.3s ease;
+}
+
+/* Promenite širinu linije na hover */
+.nav-li2 a:hover::after {
+    transform: scaleX(1);
+	transform-origin: bottom left;
+}
+
+
+
+/* DROPDOWN MENI  */
+.dropdown-sadrzaj{
+	display: none;
+	position: absolute;
+	top: 100%;
+	flex-wrap: wrap;
+	width: 120px;
+	left: 0;
+	background: rgba(0, 0, 0, 0.7);
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 0px;
+	padding-top: 5px;
+	z-index: 3;
+	margin-top: 0px;
+	border: 1px solid #29a4f9;
+	line-height: 1.1;
+	border-radius: 15px;
+}
+
+/*  KRAJ NAVIGACIJE  */

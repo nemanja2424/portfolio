@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Kalkulator tezine i visine</title>
+	<style type="text/css">
+		*{
+			font-family: Arial, Helvetica;
+		}
+		body{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: space-around;
+			margin: 20px 5%;
+		}
+		div{
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			width: 45%;
+			padding: 10px;
+			border: 2px dashed black;
+			background-color: mediumpurple;
+			height: auto;
+			border-radius: 20px;
+		}
+		form{
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+		}
+		h1{
+			font-size: 40px;
+		}
+		select{
+			height: 100%;
+			width: 100%;
+			appearance: none;
+			font-size: 20px;
+			border-radius: 10px;
+			margin: 5px;
+			margin-bottom: 15px;
+			padding: 1px 5px;
+			cursor: pointer;
+			border: 2px solid purple;
+		}
+		option{
+			background-color: purple;
+			color: pink;
+			border-radius: 10px;
+		}
+		.moj-select{
+			position: relative;
+			width: 200px;
+			padding: 0px;
+			margin: 0;
+			border: none;
+		}
+		.moj-select::after{
+			content: '\25BC';
+			position: absolute;
+			top: 50%;
+			right: 10px;
+			transform: translateY(-65%);
+			pointer-events: none;
+		}
+		.dugme{
+			margin: 5px 10px;
+			padding: 2px 5px;
+			background-color: white;
+			border: 2px solid purple;
+			border-radius: 7px;
+			font-size: 20px;
+		}
+		.dugme:hover{
+			background-color: mediumpurple;
+			outline: 2px solid purple;
+			border: 2px dashed white;
+			color: pink;
+			cursor: pointer;
+		}
+		.inline-div{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			border: none;
+			width: auto;
+		}
+		.unos{
+			border-radius: 10px;
+			outline: none;
+			border: 2px solid purple;
+			padding: 2px 5px;
+			height: 20px;
+			font-size: 15px;
+			margin: 10px;
+		}
+		.unos::placeholder{
+			color: pink;
+		}
+		.bolduj{
+			font-weight: 600;
+		}
+		.rezultati{
+			font-size: 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+			width: 70%;
+			border: none;
+			text-align: center;
+		}
+		.tekstGreske{
+			color: black;
+			font-weight: 550;
+			font-size: 20px;
+			text-decoration: underline;
+			text-decoration-color: red;
+		}
+		.greska-div{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 70%;
+		}
+	@media screen and (max-width: 1001px) {
+	    body {
+	        flex-direction: column; /* Stack elements vertically */
+	        align-items: center; /* Center items horizontally */
+	    }
+    
+	    div {
+	        width: 90%;
+	        margin-bottom: 20px;
+	    }
+	    .unos{
+			border-radius: 10px;
+			outline: none;
+			border: 2px solid purple;
+			padding: 2px 5px;
+			height: 20px;
+			width: 80%;
+			font-size: 15px;
+			margin: 10px;
+		}
+}
+
+	</style>
+</head>
+<body>
+
+<div>
+	<h1>Kalkulator tezine</h1>
+	<form>
+		<div class="moj-select">
+			<select type="select" id="odabirTezine">
+				<option class="nemaTezine">Odaberite opciju</option>
+				<option id="uLBS">kg u lbs</option>
+				<option id="uKG">lbs u kg</option>
+			</select>
+		</div>
+		
+		<div class="inline-div">
+			<label class="bolduj">Unesite masu za konvertovanje:</label>
+			<input type="text" id="unosTezine" placeholder="Iskljucivo cifre" class="unos">
+		</div>
+			
+		<div class="inline-div">
+			<input type="button" id="potvrdiTezinu" value="Potvrdi" class="dugme" onclick="submitTezina()">
+			<input type="reset" name="reset" id="resetujTezinu" class="dugme">
+		</div>
+	</form>
+	<div class="rezultati"><h2>Ovde ce se ispisivati rezultati:</h2><div id="rezultatiTezine" class="rezultati"></div></div>
+</div>
+
+
+<div>
+	<h1>Kalkulator visine</h1>
+	<form>
+		<div class="moj-select">
+			<select id="odabirVisine">
+				<option>Odaberite opciju</option>
+				<option>cm u ft i inch</option>
+				<option>ft i inch u cm</option>
+			</select>
+		</div>
+		<div class="inline-div" id="dodamSelect">
+			<label class="bolduj">Unesite visinu za konvertovanje:</label>
+			<input type="text" id="unosVisine1" placeholder="Iskljucivo cifre" class="unos">
+		</div>
+		<div class="inline-div">
+			<input type="button" id="potvrdiVisinu" class="dugme" value="Potvrdi" onclick="submitVisina()">
+			<input type="reset" name="reset" id="resetujVisinu" class="dugme">
+		</div>
+	</form>
+	<div class="rezultati"><h2>Ovde ce se ispisivati rezultati:</h2><div id="rezultatiVisine" class="rezultati"></div></div>
+</div>
+
+
+<script type="text/javascript"><!--
+
+	function submitTezina() {
+			var odabirTezine = document.getElementById('odabirTezine');
+			var unosTezine = document.getElementById('unosTezine');
+			var tezinaDiv = document.getElementById('rezultatiTezine');
+			var masa = parseFloat(unosTezine.value);
+
+		if (odabirTezine.value === "kg u lbs" && !isNaN(masa)) {
+			var resenjeULBS = Math.floor(masa * 2.204622);
+			tezinaDiv.innerHTML += '<div class="inline-div">' + masa + 'kg = ' + resenjeULBS + 'lbs</div>' 
+		}
+
+		else if (odabirTezine.value === "lbs u kg" && !isNaN(masa)) {
+			var resenjeUKG = Math.floor(masa / 2.204622);
+			tezinaDiv.innerHTML += '<div class="inline-div">' + masa + 'lbs = ' + resenjeUKG + 'kg</div>'
+		}
+	    else {
+	        tezinaDiv.innerHTML += '<p class="tekstGreske">Unesite ispravnu vrednost ili odaberite metodu konvertovanja!</p>';
+    }
+	}
+	document.getElementById('resetujTezinu').addEventListener('click', function(){
+		var tezinaDiv = document.getElementById('rezultatiTezine');
+		tezinaDiv.innerHTML = '';
+	});
+
+
+	function submitVisina(){
+	    var odabirVisine = document.getElementById('odabirVisine');
+	    var visinaDiv = document.getElementById('rezultatiVisine');
+	    var unosVisine1 = document.getElementById('unosVisine1');
+	    var visina1 = parseFloat(unosVisine1.value);
+	
+	    var dodamSelect = document.getElementById('dodamSelect');
+
+	    if (odabirVisine.value === "cm u ft i inch" && !isNaN(visina1)) {
+	    	var ft = Math.floor(visina1 / 30.48);
+	    	var inch = visina1 / 2.54;
+	    	var resenjeUFT = inch % ft;
+	    	resenjeUFT = resenjeUFT.toFixed (2);
+
+	    	visinaDiv.innerHTML += '<div class="inline-div">Resenje za ' + visina1 + 'cm je: ' + ft + 'ft ' + resenjeUFT + 'inch</div>';
+	    	console.log(inch)
+	    }
+	    else if (odabirVisine.value === "ft i inch u cm" && !isNaN(visina1) && !isNaN(unosVisine2.value)) {
+	    	var visina2 = parseFloat(unosVisine2.value);
+	    	var inch2 = visina1 * 12 + visina2;
+	    	var resenjeUCM = inch2 * 2.54;
+	    	visinaDiv.innerHTML += '<div class="inline-div">Resenje za ' + visina1 + 'ft i ' + visina2 + 'inch ' + 'je: ' + resenjeUCM + 'cm</div>';
+	    	console.log(inch2);
+	    }
+	    else {
+	        visinaDiv.innerHTML += '<p class="tekstGreske">Unesite ispravnu vrednost ili odaberite metodu konvertovanja!</p>';
+	    }
+	}
+	document.getElementById('resetujVisinu').addEventListener('click', function(){
+		var visinaDiv = document.getElementById('rezultatiVisine');
+		visinaDiv.innerHTML = '';
+	});
+
+
+
+
+document.getElementById('odabirVisine').addEventListener('change', function() {
+    var odabir = document.getElementById('odabirVisine').value;
+    var unosVisine2 = document.getElementById('unosVisine2');
+    // Ispravka: Dodata provera da li je odabirVisine !== null pre nego što se pokuša pristupiti svojstvu 'value'
+    if (odabir === "ft i inch u cm") {
+        var dodamSelect = document.getElementById('dodamSelect');
+        dodamSelect.innerHTML += '<input type="text" id="unosVisine2" placeholder="Iskljucivo cifre" class="unos" value="0">';
+    }
+    // Ispravka: Dodat else blok koji se aktivira kada odabir nije "ft i inch u cm", i resetuje HTML sadržaj #dodamSelect-a
+    else {
+        var dodamSelect = document.getElementById('dodamSelect');
+        dodamSelect.innerHTML = '<label class="bolduj">Unesite visinu za konvertovanje:</label><input type="text" id="unosVisine1" placeholder="Iskljucivo cifre" class="unos">';
+    }
+});
+
+
+
+--></script>
+</body>
+</html>

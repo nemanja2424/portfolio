@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Nemanja Jakovljevic</title>
+	<link rel="stylesheet" type="text/css" href="stilovi.css">
+</head>
+<body>
+<header>
+	<a href="index-sr.html"><img id="logo" src="Media/logo u boji 128x128.png" width="90px" /></a>
+<div id="hamburger"><img src="Media/hamburger.svg"></div>
+	<nav class="navigacija" id="navigacija">
+			<ul><div id="iks"><a href="#"><img src="Media/iks.svg"></a></div>
+				<li><a href="index-sr.html">Početna</a></li>
+				<li><a href="work-sr.html">Moj radovi</a></li>
+				<li><a onclick="downscroll('futer')">Kontakt</a></li>
+				<li id="dropdown" onclick="spustiMeni()">Jezik
+  			    	<ul class="dropdown-sadrzaj srpski-nav" id="jezikOpcije">
+           				<li><a href="index.html"><img src="Media/English.png" class="ikona5">Engleski</a></li>
+            			<li id="mojSrpski"><a href="index-sr.html"><img src="Media/srbija.png" class="ikona5">Srpski</a></li>
+        			</ul>
+    			</li>
+			</ul>
+	</nav>
+</header>
+
+<div class="hero">
+	<div class="hero-div">
+		<h1>"Dizajniranje digitalnih okruženja po meri<br/>tvojih želja" - <span class="menja-boju zoom1">Nemanja Jakovljević</span></h1>
+		<div class="inline3-div">
+			<a onclick="downscroll('projekti')" class="dugme">Moj radovi</a>&nbsp;&nbsp;
+			<a onclick="downscroll('futer')" class="dugme">Sarađujmo zajedno!</a>
+		</div>
+	</div>
+	<a onclick="downscroll('ispod-hero')">
+		<img class="skrol-dole zoom2" src="Media/Strela4.png">
+	</a>
+</div>
+
+<video id="video-hero" autoplay muted loop><source class="slika" src="Media/video-hero24.mp4"></video>
+
+<div class="fs">
+	<div class="kolona1">
+		<div class="auto">	
+			<h1 class="zoom1 menja-boju" id="ispod-hero">O menji i mojim veštinama</h1> <!-- ABOUT -->
+			<div class="p-div2">	
+					<p class="tekst" id="mojTekst">
+				    	Zdravo, ja sam strastveni <span class="zoom1 plava-boja">Front-End</span> developer. Moj cilj je da svakog dana<br/> naučim nešto novo. Moje veštine se zasnivaju na <span class="html-boja">Html-u</span>, <span class="css-boja">Css-u</span>, <span class="js-boja">Java Script-u</span> i WordPress-u.
+						<br />
+						Svoje znanje i veštine svakodnevno nadograđujem istaživajuci nove tehnologije. Brzo učim i otvorenog sam uma, sa izvanrednim sposobnostima za timski rad.<br/><span class="js-boja">Kodiranje</span> je moj način meditacije.
+				  	</p>
+				  	<hr width="60%" color="gray">
+				  	<p>
+				  		Sebe mogu opisati kao osobu koja želi da uči i razvija svoje potencijale u svim situacijama. Moj profesionalni cilj je da se usavršavam i da postignem uspeh u poslu, odnosno karijeri. Smatram da svako može kreirati svoju karijeru težnjom za inovacijama, trudom i zalaganjem, kako bi se na profesionalnom polju što bolje ostvario. Na taj način percipirate svoj budući posao, odnosno način na koji želite da gradite pravac svoje karijere.
+				  	</p>
+				  	<hr width="60%" color="gray">
+				  	<p>
+						Shodno napred navedenom, tragam za kompanijama kojima su potrebni mladi, vredni stručnjaci za obavljanje poslova (part-time i honorarno) ili za realizaciju plaćene stručne prakse. Moj glavni cilj je da naučim što je više moguće iz oblasti informacionih tehnologija. Takođe, sebe mogu opisati kao veoma ambicioznu i upornu osobu, koja se trudi da dođe do cilja.
+				  	</p>
+				  	<hr width="60%" color="gray">
+				  	<p>
+				  		Obzirom da sam student Akademije u Nišu, smer "Savremenih računarskih tehnologija", još uvek nisam u mogućnosti da se posvetim poslu sa punim radnim vremenom, ali osećam da imam dovoljno vremena da ostvarim sve izazove koji bi mi bili postavljeni. Dok studiram, imam veliku želju da uporedo radim posao u struci, koju izuzetno volim.
+				  	</p>
+				<div class="spacer20"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr width="60%" color="#29a4f9" />
+
+<div class="spacer50"></div>
+
+<div class="auto">
+
+	<h1 class="zoom1 menja-boju" id="projekti">Moj istaknuti projekti</h1>
+</div>
+
+<div class="fs">
+		<div class="kolona21 rounded-div25 zoom1 border-div">
+		<img class="slika" src="Media/balkanik.png">
+		<div class="p-div">
+			<h2>Balkanik</h2>
+			<h3>WordPress projekat</h3>
+			<div class="spacer40"></div>
+			<p>
+				Ovaj web sajt je pravljen za mog prvog klijenta. Ovaj web sajt predstavlja portal na kome možete čitati vesti. Posetite web stranicu klikom na dugme ispod.
+			</p>
+		</div>
+		<div class="spacer40"></div>
+		<a class="dugme" href="https://www.balkanik.info" target="_blank">Posetite sajt</a>
+		<div class="spacer40"></div>
+	</div>	
+	<div class="kolona21 rounded-div25 zoom1 border-div">
+		<img class="slika" src="Media/pf-cover.jpg">
+		<div class="p-div">
+			<h2>This website</h2>
+			<h3><span class="html-boja">Html</span>, <span class="css-boja">css</span>, <span class="js-boja">.js</span></h3>
+			<div class="spacer40"></div>
+			<p>
+				This website represents my <span class="plava-boja">portfolio</span>. This site was created with the help of <span class="html-boja">html</span>, <span class="css-boja">css</span> and <span class="js-boja">js.</span> This is my first website built with code. If you want to read more about him, you can do so by clicking on the button below.
+			</p>
+		</div>
+		<div class="spacer40"></div>
+	</div>	
+</div>
+
+<div class="spacer30"></div>
+
+<div class="fs">
+
+		<div class="kolona21 border-div rounded-div25 zoom1">
+			<div class="auto">
+			<img class="slika" src="Media/dc-cover.jpg">
+			<h2 class="gore">Digital Corner</h2>
+			<h3 class="ispod-naslova">WordPress projekat</h3>
+			<div class="spacer50"></div>
+			<p class="p-div">Ovaj projekat je napravljen u WordPress-u. Digital Corner je responsivan website za sve tipove uređaja i poseduje određene funkcije. Ovaj projekat ima dodatni 				<span class="css-boja">Css</span> Posetite web stranicu klikom na dugme ispod.</p>
+				<div class="inline-div">
+					<div class="spacer40"></div>
+					<a class="dugme" href="http://www.digital-corner.digital" target="_blank">Posetite sajt</a>
+				</div>
+			<div class="spacer40"></div>
+		</div>
+	</div>
+
+	<div class="kolona21 border-div rounded-div25 zoom1">
+			<div class="auto">
+			<img class="slika" src="Media/pj-cover.jpg">
+			<h2 class="gore">Parking Jakovljević</h2>
+			<h3 class="ispod-naslova">WordPress project</h3>
+			<div class="spacer50"></div>
+			<p class="p-div">Ovo je moj prvi projekat. Parking Jakovljević je responsivan website za sve tipove uređaja. Ovaj projekat je rađen u WordPress-u i poseduje određene funkcije. Posetite web stranicu klikom na dugme ispod.</p>
+			<div class="inline-div">
+				<div class="spacer40"></div>
+				<a class="dugme" href="http://www.parking-jakovljevic.site" target="_blank">Posetite sajt</a>
+			</div>
+			<div class="spacer40"></div>
+			</div>
+		</div>
+
+</div>
+<div class="spacer40"></div>
+<div class="rounded-div25 fs see-all"><a href="work-sr.html" class="dugme">Pogledajte sve moje projekte</a></div>
+
+<div class="spacer50"></div>
+<div id="scroll-to-top" onClick="scrollToTop()"><img src="Media/dropdown.png"></div>
+<footer id="futer">
+
+	<div class="kolona3"> <!-- OBICAN KONTAKT -->
+		<div class="about-div">
+			<div class="inline2-div">
+				<img class="ikona2" src="Media/mail-background.png">
+				<div class="inline-div">
+					<h3 style="margin-top: 20px; margin-bottom: -18px;">E-mail</h3>
+					<h4><a class="no-dec zoom1 menja-boju za-fon" href="mailto:jakovljevic.nemanja@outlook.com">jakovljevic.nemanja@outlook.com</a></h4>
+				</div>
+			</div>
+		</div>
+		<div class="about-div">
+			<div class="inline2-div">
+				<img class="ikona2" src="Media/call-background.png">
+				<div class="inline-div">
+					<h3 style="margin-bottom: -18px; margin-top: 15px;">Broj telefona</h3>
+					<h4><a class="no-dec zoom1 menja-boju" href="tel:+381604339800">+381-60-433-9800</a></h4>
+				</div>
+			</div>
+		</div>
+		<div class="about-div">
+			<div class="inline2-div">
+				<img class="ikona2" src="Media/location-background.png">
+				<div class="inline-div">
+					<h3 style="margin-top: 15px; margin-bottom: -18px;">Lokacija</h3>
+					<h4><a class="no-dec zoom1 menja-boju" href="https://www.google.com/maps/place/Ниш/@43.3161735,21.85216,13z/data=!3m1!4b1!4m6!3m5!1s0x4755b0c240c81f65:0x56319fe3122ac3cd!8m2!3d43.320926!4d21.8954069!16zL20vMDFrXzlo?entry=ttu">Niš, Serbia</a></h4>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="kolona3"> <!-- SOCIJALNE MREZE -->
+			<div class="social-div" id="fiverrDiv"  onmouseover="promeniSliku(4)" onmouseout="vratiSliku(4)">
+				<img id="socialSlika4" class="ikona4" src="Media/social/prva4.png">
+				<div class="inline2-div">
+					<h4><a  class="no-dec menja-boju-zeleno" href="https://www.upwork.com/freelancers/~0105c1dd3065b98e8f">Pogledajte šta nudim na UpWork-u!</a></h4>
+				</div>
+			</div>
+				<div class="social-div" id="instaDiv"  onmouseover="promeniSliku(3)" onmouseout="vratiSliku(3)">
+					<img id="socialSlika3" class="ikona4" src="Media/social/prva3.png">
+					<h4><a class="no-dec" href="https://www.instagram.com/jakovljeviic___/#">Posetite moj Instagram i kontaktirajte me!</a></h4>
+				</div>
+			<div class="social-div" id="linkedinDiv"  onmouseover="promeniSliku(2)" onmouseout="vratiSliku(2)">
+				<img id="socialSlika2" class="ikona4" src="Media/social/prva2.png">
+				<div class="inline2-div">
+					<h4><a  class="no-dec" href="https://www.instagram.com/jakovljeviic___/#">Obratite mi se na LinkedIn-u!</a></h4>
+				</div>
+			</div>
+			<div class="social-div" id="waDiv" onmouseover="promeniSliku(1)" onmouseout="vratiSliku(1)">
+				<img id="socialSlika1" class="ikona4" src="Media/social/prva1.png">
+				<div class="inline2-div">
+					<h4><a  class="no-dec" href="https://w.app/Nemanja">Kontaktirajte me na WhatsApp-u.</a></h4>
+				</div>
+			</div>
+	</div>
+
+</footer>
+
+
+<script type="text/javascript" src="skripta.js"></script>
+</body>
+</html>
