@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Arbitrawin</title>
+        <link rel="stylesheet" type="text/css" href="../stilovi.css">
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><img id="logo" src="../Media/logo u boji 128x128.png" width="90px" /></a>
+            <div id="hamburger"><img src="../Media/hamburger.svg"></div>
+            <nav class="navigacija" id="navigacija">
+                    <ul><div id="iks"><a href="#"><img src="../Media/iks.svg"></a></div>
+                        <li class="nav-li"><a href="../index.html">Home</a></li>
+                        <li class="nav-li"><a href="../work.html">My work</a></li>
+                        <li class="nav-li"><a onclick="downscroll('futer')">Contact</a></li>
+                        <li class="nav-li" id="dropdown" onclick="spustiMeni()">Language
+                              <ul class="dropdown-sadrzaj" id="jezikOpcije">
+                                   <li><a href="../index.html" class="nav-li"><img src="../Media/English.png" class="ikona5">English</a></li>
+                                <li class="nav-li"><a href="../index-sr.html"><img src="../Media/srbija.png" class="ikona5">Serbian</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+            </nav>
+        </header>
+        <div class="spacer50"></div>
+        <div class="spacer50"></div>
+        <div class="auto">
+            <h1>Arbitrawin</h1>
+        </div>
+        <div class="fs">
+            <div class="kolona-nova">
+                <p>
+                    This was my biggest project so far. It all started with the idea of learning Java for a university exam, but I also wanted to build something useful along the way. The application is designed to find arbitrage betting opportunities by analyzing matches across different betting platforms in my country and displaying the data on a website.
+                </p>
+            
+                <p>
+                    To clarify, <span class="plava-boja">arbitrage betting</span> is a way of placing bets that guarantees a profit regardless of the outcome. The key to arbitrage betting is finding the same match on multiple platforms that offer significantly different odds. The easiest way to explain this concept is with an example.
+                    Imagine a match between <span class="plava-boja">Barcelona</span> and <span class="plava-boja">Real Madrid</span>. On the betting platform <span class="js-boja">Bet365</span>, the odds for Barcelona to win are 2.0, while on <span class="js-boja">Betfair</span>, the odds for Real Madrid to win are 2.5. If you bet 100 RSD on Barcelona and 80 RSD on Real Madrid, you will win 200 RSD in either case. That gives you a guaranteed profit of 20 RSD, no matter who wins.
+                    However, without software to find suitable matches, it is almost impossible to succeed with arbitrage betting. The reason is simple: every betting platform offers over 20,000 odds that change constantly. Analyzing all of that data manually takes too much time, and speed is essential.
+                </p>
+            
+                <p>
+                    That’s where my application comes in. It’s written in Java and uses web scraping and data analysis techniques. At the beginning, I struggled with web scraping, as it was my first time using Java, building an advanced website, and even hearing about APIs. My first approach was to use Selenium to grab data by targeting CSS classes—but it didn’t work, because the data wasn’t hardcoded in the HTML. I thought waiting a second or two would help, but it didn’t. So I began researching how the platforms fetch their data from databases—and that’s when I discovered APIs. After learning the basics of APIs, I analyzed the requests and found that one API has data for generating others. Once I figured out how it all worked, everything else became easier. I formatted different JSON structures into one unified format and implemented a formula for finding the best arbitrage betting opportunities. That completed the core logic of the project.
+                </p>
+            
+                <p>
+                    The next part of the project was building the website. During this process, I did many things for the first time—adding animations, focusing on user experience, using JavaScript as the main programming language, and creating my first login and registration system. I really put effort into building this site, and I consider it my first real project. It taught me a lot and gave me a strong foundation for learning modern JavaScript frameworks later on.
+                </p>
+            
+                <b class="plava-boja">
+                    I am very proud of this project because it proved to me that I can build anything—even when I have no idea how to start. It might take more time, but I always finish what I begin. This project motivated me to keep learning and to build tools that are unique, useful, and crafted with quality in mind.
+                </b>
+                <div class="spacer50"></div>
+                <a href="https://arbitrawin.com/" class="dugme">Visit website</a>
+                <hr width="60%" color="gray">
+                <p style="text-align: center;">Since the website is intended for a local audience, please use a browser extension for translation, or check out the available videos.</p>
+                <h4>Home page</h4>
+                <video src="../Media/Arbitrage Home.mp4" style="width: 90%;" autoplay loop muted></video>
+                <h4>Login and registration system UI</h4>
+                <video src="../Media/ArbitrageLogin.mp4" style="width: 90%;" autoplay loop muted></video>
+                <h4>Arbitrage betting opportunities (Betting platfors are hidden)</h4>
+                <img src="../Media/ArbitrageOffers.png" style="width: 90%;" alt="Betting platfors are hidden.">
+                <div class="spacer50"></div>
+            </div>
+            
+        </div>
+
+        <footer id="futer">
+
+            <div class="kolona3"> <!-- OBICAN KONTAKT -->
+                <div class="about-div">
+                    <div class="inline2-div">
+                        <img class="ikona2" src="../Media/mail-background.png">
+                        <div class="inline-div">
+                            <h3 style="margin-top: 20px; margin-bottom: -18px;">E-mail</h3>
+                            <h4><a class="no-dec zoom1 menja-boju za-fon" href="mailto:jakovljevic.nemanja@outlook.com">jakovljevic.nemanja@outlook.com</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-div">
+                    <div class="inline2-div">
+                        <img class="ikona2" src="../Media/call-background.png">
+                        <div class="inline-div">
+                            <h3 style="margin-bottom: -18px; margin-top: 15px;">Phone number</h3>
+                            <h4><a class="no-dec zoom1 menja-boju" href="tel:+381604339800">+381-60-433-9800</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-div">
+                    <div class="inline2-div">
+                        <img class="ikona2" src="../Media/location-background.png">
+                        <div class="inline-div">
+                            <h3 style="margin-top: 15px; margin-bottom: -18px;">Location</h3>
+                            <h4><a class="no-dec zoom1 menja-boju" href="https://www.google.com/maps/place/Ниш/@43.3161735,21.85216,13z/data=!3m1!4b1!4m6!3m5!1s0x4755b0c240c81f65:0x56319fe3122ac3cd!8m2!3d43.320926!4d21.8954069!16zL20vMDFrXzlo?entry=ttu">Niš, Serbia</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="kolona3"> <!-- SOCIJALNE MREZE -->
+                    <div class="social-div" id="fiverrDiv"  onmouseover="promeniSliku(4)" onmouseout="vratiSliku(4)">
+                        <img id="socialSlika4" class="ikona4" src="../Media/social/prva4.png">
+                        <div class="inline2-div">
+                            <h4><a  class="no-dec menja-boju-zeleno" href="https://www.upwork.com/freelancers/~0105c1dd3065b98e8f">Visit my UpWork profile and look my offer.</a></h4>
+                        </div>
+                    </div>
+                        <div class="social-div" id="instaDiv"  onmouseover="promeniSliku(3)" onmouseout="vratiSliku(3)">
+                            <img id="socialSlika3" class="ikona4" src="../Media/social/prva3.png">
+                            <div class="inline2-div"><h4><a class="no-dec" href="https://www.instagram.com/jakovljeviic___/#">Check my Instagram and contact me!</a></h4></div>
+                        </div>
+                    <div class="social-div" id="linkedinDiv"  onmouseover="promeniSliku(2)" onmouseout="vratiSliku(2)">
+                        <img id="socialSlika2" class="ikona4" src="../Media/social/prva2.png">
+                        <div class="inline2-div">
+                            <h4><a  class="no-dec" href="https://www.instagram.com/jakovljeviic___/#">Reach out to me on LinkedIn.</a></h4>
+                        </div>
+                    </div>
+                    <div class="social-div" id="waDiv" onmouseover="promeniSliku(1)" onmouseout="vratiSliku(1)">
+                        <img id="socialSlika1" class="ikona4" src="../Media/social/prva1.png">
+                        <div class="inline2-div">
+                            <h4><a  class="no-dec" href="https://w.app/Nemanja">Contact me on WhatsApp. Let's cooperate!</a></h4>
+                        </div>
+                    </div>
+            </div>
+        
+        </footer>
+    </body>
+</html>
